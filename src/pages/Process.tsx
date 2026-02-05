@@ -2,218 +2,200 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
-import SectionHeading from '@/components/ui/SectionHeading';
-
-const processSteps = [
-  {
-    number: '01',
-    title: 'Initial Consultation',
-    description: 'We begin with a focused conversation about your research, publication timeline, and visual requirements. I ask questions, listen carefully, and make sure I understand the science before picking up any tools.',
-    details: [
-      'Research background and context',
-      'Publication specifications',
-      'Timeline and milestones',
-      'Budget discussion',
-    ],
-    duration: '30–60 min call',
-  },
-  {
-    number: '02',
-    title: 'Concept Development',
-    description: 'Based on our discussion, I develop initial concepts—typically 2–3 directions for you to consider. These are rough sketches with notes, not finished work. The goal is to align on direction before investing in detail.',
-    details: [
-      'Compositional sketches',
-      'Color and lighting direction',
-      'Scientific accuracy review',
-      'Feedback and refinement',
-    ],
-    duration: '3–5 days',
-  },
-  {
-    number: '03',
-    title: 'Refinement & Production',
-    description: 'Once we\'ve selected a direction, I move into full production. You\'ll see progress updates and have opportunities to provide feedback. Scientific accuracy is verified at each stage with your input.',
-    details: [
-      'High-fidelity rendering',
-      'Detail refinement',
-      'Color calibration',
-      'Accuracy verification',
-    ],
-    duration: '1–3 weeks',
-  },
-  {
-    number: '04',
-    title: 'Delivery & Support',
-    description: 'Final files are delivered in all required formats, optimized for both print and digital use. I remain available for minor adjustments during the publication process.',
-    details: [
-      'Print-ready files (CMYK)',
-      'Digital versions (RGB)',
-      'Source files if requested',
-      'Post-delivery support',
-    ],
-    duration: 'Same day after approval',
-  },
-];
 
 const Process = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-spacing pb-0">
+      <section className="section-spacing">
         <div className="container-editorial">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-3xl"
+            className="max-w-4xl"
           >
-            <span className="text-caption uppercase tracking-widest text-muted-foreground mb-4 block">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display leading-tight mb-12">
               Process
-            </span>
-            <h1 className="text-display-lg font-display">
-              How We Work Together
             </h1>
-            <p className="mt-6 text-body-lg text-muted-foreground max-w-2xl">
-              A clear, structured process that respects your time and expertise. No surprises, no scope creep—just focused work toward a shared goal.
+            
+            <p className="text-xl md:text-2xl leading-relaxed text-muted-foreground">
+              A structured approach that respects your time and ensures scientific accuracy at every stage.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Process Steps */}
-      <section className="section-spacing">
+      <section className="section-spacing bg-secondary/20">
         <div className="container-editorial">
-          <div className="space-y-0">
-            {processSteps.map((step, index) => (
-              <motion.article
-                key={step.number}
-                initial={{ opacity: 0, y: 32 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 py-16 border-t border-border"
-              >
-                {/* Number */}
-                <div className="lg:col-span-2">
-                  <span className="text-display-lg font-display text-muted-foreground/20">
-                    {step.number}
-                  </span>
-                </div>
+          <div className="space-y-20">
+            {/* Scientific Alignment */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="max-w-3xl"
+            >
+              <h2 className="text-4xl md:text-5xl font-display mb-6">
+                Scientific alignment
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                We work closely with researchers to ensure scientific accuracy at every stage. This isn't about following instructions—it's about understanding the research deeply enough to make informed visual decisions.
+              </p>
+              <p className="text-base text-muted-foreground">
+                Duration: Initial consultation (30–60 min), ongoing dialogue throughout
+              </p>
+            </motion.div>
 
-                {/* Content */}
-                <div className="lg:col-span-6">
-                  <h2 className="text-display-sm font-display mb-4">
-                    {step.title}
-                  </h2>
-                  <p className="text-body-md text-muted-foreground">
-                    {step.description}
-                  </p>
-                </div>
+            {/* Visual Research */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="max-w-3xl"
+            >
+              <h2 className="text-4xl md:text-5xl font-display mb-6">
+                Visual research
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                Exploring visual directions that serve both the narrative and the science. Sketches, compositional studies, lighting tests. Not finished work—explorations to align on direction before committing to detail.
+              </p>
+              <p className="text-base text-muted-foreground">
+                Duration: 3–5 days
+              </p>
+            </motion.div>
 
-                {/* Details */}
-                <div className="lg:col-span-4">
-                  <div className="mb-6">
-                    <span className="text-caption uppercase tracking-widest text-muted-foreground">
-                      Duration
-                    </span>
-                    <p className="mt-1 text-body-sm font-medium">{step.duration}</p>
-                  </div>
-                  <div>
-                    <span className="text-caption uppercase tracking-widest text-muted-foreground mb-3 block">
-                      Key Activities
-                    </span>
-                    <ul className="space-y-2">
-                      {step.details.map((detail) => (
-                        <li key={detail} className="text-body-sm text-foreground flex items-start gap-2">
-                          <span className="mt-2 w-1 h-1 rounded-full bg-primary flex-shrink-0" />
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </motion.article>
-            ))}
+            {/* Iterative Development */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="max-w-3xl"
+            >
+              <h2 className="text-4xl md:text-5xl font-display mb-6">
+                Iterative development
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                Visual decisions are discussed, tested and refined through iterations, balancing clarity and expressive power. You see progress updates, provide feedback, and we adjust. Scientific accuracy is verified at each stage.
+              </p>
+              <p className="text-base text-muted-foreground">
+                Duration: 1–3 weeks depending on complexity
+              </p>
+            </motion.div>
+
+            {/* Final Delivery */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="max-w-3xl"
+            >
+              <h2 className="text-4xl md:text-5xl font-display mb-6">
+                Final delivery
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                Publication-ready files in all required formats and resolutions. Print-ready (CMYK), digital (RGB), and source files if requested. Minor adjustments during the publication process are included.
+              </p>
+              <p className="text-base text-muted-foreground">
+                Duration: Same day after final approval
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Teaser */}
-      <section className="section-spacing bg-secondary/30">
-        <div className="container-editorial">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-            <div>
-              <SectionHeading
-                label="Questions"
-                title="Common Concerns"
-              />
-            </div>
-            <div className="space-y-8">
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <h3 className="text-body-lg font-medium font-display mb-2">
-                  What if I need revisions?
-                </h3>
-                <p className="text-body-md text-muted-foreground">
-                  Two rounds of revisions are included in every project. Additional revisions are billed hourly at a pre-agreed rate.
-                </p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1, duration: 0.6 }}
-              >
-                <h3 className="text-body-lg font-medium font-display mb-2">
-                  How do you ensure scientific accuracy?
-                </h3>
-                <p className="text-body-md text-muted-foreground">
-                  I work from your data and literature. You review every major milestone. The final image is only delivered after your explicit approval.
-                </p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-              >
-                <h3 className="text-body-lg font-medium font-display mb-2">
-                  What about tight deadlines?
-                </h3>
-                <p className="text-body-md text-muted-foreground">
-                  Rush projects are possible with advance notice. Let me know your timeline upfront, and we'll discuss what's feasible.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
+      {/* Typical Timeline */}
       <section className="section-spacing">
-        <div className="container-editorial text-center">
+        <div className="container-editorial">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="max-w-3xl"
           >
-            <h2 className="text-display-md font-display">
-              Ready to begin?
+            <h2 className="text-4xl md:text-5xl font-display mb-8">
+              Typical timeline
             </h2>
-            <p className="mt-4 text-body-lg text-muted-foreground max-w-xl mx-auto">
-              The first step is a brief conversation about your project.
+            
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                <strong className="text-foreground">Cover art for journals:</strong> 2–3 weeks from initial consultation to final delivery
+              </p>
+              <p>
+                <strong className="text-foreground">Complex mechanism visualization:</strong> 3–4 weeks
+              </p>
+              <p>
+                <strong className="text-foreground">Series of related images:</strong> 4–6 weeks
+              </p>
+            </div>
+            
+            <p className="mt-10 text-lg text-muted-foreground leading-relaxed">
+              Rush projects can be accommodated depending on current workload. If you have a tight deadline, mention it upfront and we'll discuss feasibility.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* What to Expect */}
+      <section className="section-spacing bg-secondary/20">
+        <div className="container-editorial">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl"
+          >
+            <h2 className="text-4xl md:text-5xl font-display mb-8">
+              What to expect
+            </h2>
+            
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                <strong className="text-foreground">Clear communication:</strong> No jargon, no vague updates. You'll know what's happening and when.
+              </p>
+              <p>
+                <strong className="text-foreground">Respect for your expertise:</strong> You know the science. I know the visuals. We collaborate, not dictate.
+              </p>
+              <p>
+                <strong className="text-foreground">No surprises:</strong> Scope, timeline, and cost are agreed upfront. Changes are discussed before implementation.
+              </p>
+              <p>
+                <strong className="text-foreground">Quality over speed:</strong> Rushing leads to errors. Good work takes time. If you need it fast, we'll discuss what's realistic.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-spacing">
+        <div className="container-editorial">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-2xl"
+          >
+            <h2 className="text-4xl md:text-5xl font-display mb-8">
+              Ready to start?
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed mb-10">
+              Let's discuss your project and see if we're a good fit.
             </p>
             <Link
               to="/contact"
-              className="mt-10 inline-flex items-center gap-2 px-8 py-4 bg-foreground text-background font-medium transition-all duration-400 hover:bg-primary"
+              className="inline-flex items-center gap-3 text-lg font-medium text-foreground hover:text-primary transition-colors group border-b border-foreground/20 hover:border-primary pb-1"
             >
-              Schedule a Call
-              <ArrowRight className="w-4 h-4" />
+              Get in touch
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
             </Link>
           </motion.div>
         </div>

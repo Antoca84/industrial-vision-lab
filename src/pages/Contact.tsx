@@ -1,187 +1,156 @@
 import { motion } from 'framer-motion';
-import { Mail, ArrowUpRight } from 'lucide-react';
+import { Mail, MessageCircle } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
+
 const Contact = () => {
-  return <Layout>
+  return (
+    <Layout>
       {/* Hero */}
-      <section className="section-spacing pb-0">
+      <section className="section-spacing">
         <div className="container-editorial">
-          <motion.div initial={{
-          opacity: 0,
-          y: 24
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8,
-          ease: [0.16, 1, 0.3, 1]
-        }} className="max-w-3xl">
-            <span className="text-caption uppercase tracking-widest text-muted-foreground mb-4 block">
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-4xl"
+          >
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display leading-tight mb-12">
               Contact
-            </span>
-            <h1 className="text-display-lg font-display">
-              Start a Conversation
             </h1>
-            <p className="mt-6 text-body-lg text-muted-foreground max-w-2xl">
-              Have a project in mind? Need cover art for an upcoming publication? Let's discuss how I can help visualize your research.
+            
+            <p className="text-xl md:text-2xl leading-relaxed text-muted-foreground">
+              For collaborations, inquiries or project discussions:
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Contact Content */}
-      <section className="section-spacing">
+      {/* Contact Methods */}
+      <section className="section-spacing bg-secondary/20">
         <div className="container-editorial">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-            {/* Main Contact */}
-            <motion.div initial={{
-            opacity: 0,
-            y: 24
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.6,
-            ease: [0.16, 1, 0.3, 1]
-          }} className="lg:col-span-7">
-              <div className="space-y-12">
-                <div>
-                  <h2 className="text-display-sm font-display mb-6">
-                    Email is Best
-                  </h2>
-                  <p className="text-body-md text-muted-foreground mb-8">
-                    For project inquiries, please include a brief description of your research, the type of visualization you need, and your approximate timeline. I'll respond within 24–48 hours.
-                  </p>
-                  <a className="inline-flex items-center gap-3 px-8 py-5 bg-foreground text-background font-medium transition-all duration-400 hover:bg-primary group" href="mailto:hello@industrialmagic.it">
-                    <Mail className="w-5 h-5" />
-                    hello@industrialmagic.it
-                    <ArrowUpRight className="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity" />
-                  </a>
-                </div>
-
-                <div className="pt-12 border-t border-border">
-                  <h3 className="text-body-lg font-display font-medium mb-4">
-                    What to Include
-                  </h3>
-                  <ul className="space-y-3 text-body-md text-muted-foreground">
-                    <li className="flex items-start gap-3">
-                      <span className="mt-2 w-1 h-1 rounded-full bg-primary flex-shrink-0" />
-                      Brief description of your research or publication
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="mt-2 w-1 h-1 rounded-full bg-primary flex-shrink-0" />
-                      Type of visualization needed (cover, figures, etc.)
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="mt-2 w-1 h-1 rounded-full bg-primary flex-shrink-0" />
-                      Target publication or journal (if applicable)
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="mt-2 w-1 h-1 rounded-full bg-primary flex-shrink-0" />
-                      Approximate timeline and deadline
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="mt-2 w-1 h-1 rounded-full bg-primary flex-shrink-0" />
-                      Any existing reference images or sketches
-                    </li>
-                  </ul>
-                </div>
+            {/* Email - Prominente */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-7"
+            >
+              <div>
+                <h2 className="text-4xl md:text-5xl font-display mb-8">
+                  Email
+                </h2>
+                <a
+                  href="mailto:hello@industrialmagic.studio"
+                  className="inline-flex items-center gap-4 text-2xl md:text-3xl font-medium text-foreground hover:text-primary transition-colors group border-b-2 border-foreground/20 hover:border-primary pb-2"
+                >
+                  <Mail className="w-8 h-8" />
+                  hello@industrialmagic.studio
+                </a>
+                
+                <p className="mt-10 text-lg text-muted-foreground leading-relaxed max-w-2xl">
+                  Please include a brief description of your research, the type of visualization you need, and your approximate timeline. I'll respond within 24–48 hours.
+                </p>
               </div>
             </motion.div>
 
-            {/* Sidebar */}
-            <motion.div initial={{
-            opacity: 0,
-            y: 24
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            delay: 0.2,
-            duration: 0.6,
-            ease: [0.16, 1, 0.3, 1]
-          }} className="lg:col-span-5">
-              <div className="space-y-12">
-                <div>
-                  <h3 className="text-caption uppercase tracking-widest text-muted-foreground mb-4">
-                    Response Time
-                  </h3>
-                  <p className="text-body-md">
-                    24–48 hours for initial response.<br />
-                    I'm based in Italy (CET/CEST) and work with clients across time zones.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-caption uppercase tracking-widest text-muted-foreground mb-4">
-                    Availability
-                  </h3>
-                  <p className="text-body-md text-muted-foreground">
-                    I take on a limited number of projects to ensure each receives full attention. If you have a specific deadline, please mention it early so we can assess feasibility.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-caption uppercase tracking-widest text-muted-foreground mb-4">
-                    Not Ready Yet?
-                  </h3>
-                  <p className="text-body-md text-muted-foreground">
-                    That's fine. Browse the work, read about the process, and reach out when the timing is right. No pressure.
-                  </p>
-                </div>
-
-                {/* 
-                  OPTIONAL: External form integration
-                  Uncomment and configure for Formspree, StaticForms, etc.
-                  
-                 <div className="pt-8 border-t border-border">
-                  <h3 className="text-caption uppercase tracking-widest text-muted-foreground mb-4">
-                    Prefer a Form?
-                  </h3>
-                  <a
-                    href="https://forms.example.com/your-form"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-body-sm text-foreground hover:text-primary transition-colors"
-                  >
-                    Use the contact form
-                    <ArrowUpRight className="w-4 h-4" />
-                  </a>
-                 </div>
-                 */}
+            {/* WhatsApp - Discreto */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-5"
+            >
+              <div>
+                <h3 className="text-2xl font-display mb-6">
+                  Or start a direct conversation
+                </h3>
+                <a
+                  href="https://wa.me/393479876543"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-6 py-3 border border-foreground/20 text-foreground hover:border-primary hover:text-primary transition-colors group"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  WhatsApp
+                </a>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Location Note */}
-      <section className="section-spacing bg-secondary/30">
+      {/* What to Include */}
+      <section className="section-spacing">
         <div className="container-editorial">
-          <motion.div initial={{
-          opacity: 0,
-          y: 24
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6
-        }} className="text-center max-w-2xl mx-auto">
-            <h2 className="text-display-sm font-display mb-4">
-              Based in Italy, Working Globally
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl"
+          >
+            <h2 className="text-3xl md:text-4xl font-display mb-10">
+              What to include in your message
             </h2>
-            <p className="text-body-md text-muted-foreground">
-              All collaboration happens remotely via email and video calls. Time zone differences are managed through asynchronous communication and scheduled check-ins.
+            
+            <div className="space-y-6 text-lg text-muted-foreground">
+              <p>– Brief description of your research or publication</p>
+              <p>– Type of visualization needed (cover art, figures, conceptual visuals)</p>
+              <p>– Target publication or journal (if applicable)</p>
+              <p>– Approximate timeline and deadline</p>
+              <p>– Any existing reference images, sketches, or visual direction</p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Typical Timeline */}
+      <section className="section-spacing bg-secondary/20">
+        <div className="container-editorial">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl"
+          >
+            <h2 className="text-3xl md:text-4xl font-display mb-10">
+              Typical project timeline
+            </h2>
+            
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-xl font-display mb-2">Initial consultation</h3>
+                <p className="text-lg text-muted-foreground">1–2 days after first contact</p>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-display mb-2">Concept development</h3>
+                <p className="text-lg text-muted-foreground">5–7 days</p>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-display mb-2">Refinement and iterations</h3>
+                <p className="text-lg text-muted-foreground">7–10 days</p>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-display mb-2">Final delivery</h3>
+                <p className="text-lg text-muted-foreground">2–3 days</p>
+              </div>
+            </div>
+            
+            <p className="mt-10 text-lg text-muted-foreground leading-relaxed">
+              Rush projects can be accommodated depending on current workload. Please mention if you have an urgent deadline.
             </p>
           </motion.div>
         </div>
       </section>
-    </Layout>;
+    </Layout>
+  );
 };
+
 export default Contact;

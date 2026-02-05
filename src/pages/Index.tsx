@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
-import SectionHeading from '@/components/ui/SectionHeading';
 import ProjectCard from '@/components/ProjectCard';
 
 import heroImage from '@/assets/hero-image.jpg';
@@ -13,215 +12,156 @@ import project03 from '@/assets/project-03.jpg';
 // Featured projects data
 const featuredProjects = [
   {
-    slug: 'gene-therapy-mechanism',
-    title: 'Gene Therapy Mechanism',
-    category: 'Journal Cover',
+    slug: 'cellular-interaction-study',
+    title: 'Cellular Interaction Study',
+    category: 'Graphic-novel scientific illustration',
     image: project01,
   },
   {
-    slug: 'neural-plasticity-study',
-    title: 'Neural Plasticity Study',
-    category: 'Research Visualization',
+    slug: 'molecular-mechanism-visualization',
+    title: 'Molecular Mechanism Visualization',
+    category: 'Cinematic biological rendering',
     image: project02,
   },
   {
-    slug: 'viral-structure-analysis',
-    title: 'Viral Structure Analysis',
-    category: 'Scientific Illustration',
+    slug: 'protein-structure-interpretation',
+    title: 'Protein Structure Interpretation',
+    category: 'Editorial cover art',
     image: project03,
   },
-];
-
-// Services data
-const services = [
-  {
-    title: 'Scientific Cover Art',
-    description: 'Publication-ready imagery for journals and research papers. Built to meet editorial standards.',
-  },
-  {
-    title: 'Research Visualization',
-    description: 'Complex data translated into clear, compelling visual narratives for grants and presentations.',
-  },
-  {
-    title: 'Technical Illustration',
-    description: 'Accurate molecular, cellular, and anatomical renderings for educational and commercial use.',
-  },
-];
-
-// Process steps
-const processSteps = [
-  {
-    number: '01',
-    title: 'Brief',
-    description: 'We discuss your research, audience, and publication requirements.',
-  },
-  {
-    number: '02',
-    title: 'Concept',
-    description: 'Initial sketches and direction options based on scientific accuracy.',
-  },
-  {
-    number: '03',
-    title: 'Refinement',
-    description: 'Iterative development with your feedback at every stage.',
-  },
-  {
-    number: '04',
-    title: 'Delivery',
-    description: 'Print-ready files in all required formats and resolutions.',
-  },
-];
-
-// Proof bar items
-const proofItems = [
-  'Scientific Accuracy',
-  'Publication-Ready',
-  'Editorial Standards',
-  'Peer-Review Compatible',
 ];
 
 const Index = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center">
-        {/* Background Image */}
+      {/* Hero Section - Full Screen, Lateral Text */}
+      <section className="relative min-h-screen flex items-center">
+        {/* Background Image - Dominante */}
         <div className="absolute inset-0 -z-10">
           <img
             src={heroImage}
             alt="Scientific visualization"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/60 to-transparent" />
         </div>
 
         <div className="container-editorial">
-          <div className="max-w-3xl">
-            <motion.span
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="text-caption uppercase tracking-widest text-muted-foreground mb-4 block"
-            >
-              Scientific Visualization Studio
-            </motion.span>
-            
+          <div className="max-w-2xl">
             <motion.h1
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 32 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="text-display-xl font-display"
+              transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="text-[3.5rem] md:text-[5rem] lg:text-[6rem] leading-[0.95] font-display tracking-tight"
             >
-              Where Science Meets Cinematic Craft
+              Scientific visualization with a cinematic and graphic-novel sensibility.
             </motion.h1>
             
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-8 text-body-lg text-muted-foreground max-w-xl"
+              transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-10 text-xl md:text-2xl text-muted-foreground leading-relaxed"
             >
-              We create publication-ready cover art and research visualizations for scientists, labs, and publishers who demand precision without compromise.
+              We translate complex biological research into powerful visual narratives.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-10 flex flex-wrap gap-4"
+              transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-12"
             >
               <Link
                 to="/work"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-foreground text-background font-medium transition-all duration-400 hover:bg-primary"
+                className="inline-flex items-center gap-3 text-lg font-medium text-foreground hover:text-primary transition-colors group border-b border-foreground/20 hover:border-primary pb-1"
               >
-                View Work
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 border border-foreground text-foreground font-medium transition-all duration-400 hover:bg-foreground hover:text-background"
-              >
-                Start a Project
+                View selected work
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
               </Link>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Proof Bar */}
-      <section className="border-y border-border bg-secondary/50">
-        <div className="container-editorial py-6">
-          <ul className="flex flex-wrap justify-center gap-x-12 gap-y-4">
-            {proofItems.map((item, index) => (
-              <motion.li
-                key={item}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="text-caption uppercase tracking-widest text-muted-foreground"
-              >
-                {item}
-              </motion.li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Selected Work */}
-      <section className="section-spacing">
+      {/* Manifesto Section - Densa, Senza Icone */}
+      <section className="section-spacing border-t border-border">
         <div className="container-editorial">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
-            <SectionHeading
-              label="Selected Work"
-              title="Recent Projects"
-              description="Scientific visualizations crafted with precision for leading research publications."
-            />
-            <Link
-              to="/work"
-              className="inline-flex items-center gap-2 text-body-sm font-medium text-foreground hover:text-primary transition-colors group"
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="space-y-8 text-xl md:text-2xl leading-relaxed"
             >
-              View All Work
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-            {featuredProjects.map((project, index) => (
-              <ProjectCard key={project.slug} {...project} index={index} />
-            ))}
+              <p className="font-medium">
+                We don't treat scientific images as diagrams.
+              </p>
+              <p className="font-medium">
+                We treat them as narratives.
+              </p>
+              <p className="text-muted-foreground">
+                Every visual decision — composition, color, texture — is driven by meaning, not decoration.
+              </p>
+              <p className="text-muted-foreground">
+                Our work sits between scientific accuracy and visual interpretation, informed by cinema, editorial illustration and graphic-novel language.
+              </p>
+              <p className="font-medium">
+                The goal is not realism.
+              </p>
+              <p className="font-medium">
+                The goal is clarity, tension and understanding.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* What I Do */}
-      <section className="section-spacing bg-secondary/30">
+      {/* Selected Work - Card Grandi, Una Per Riga */}
+      <section className="section-spacing bg-secondary/20">
         <div className="container-editorial">
-          <SectionHeading
-            label="Services"
-            title="What I Do"
-            description="Specialized in creating visuals that communicate complex science with clarity and impact."
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-20"
+          >
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-display leading-tight">
+              Selected Work
+            </h2>
+          </motion.div>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            {services.map((service, index) => (
+          <div className="space-y-24">
+            {featuredProjects.map((project, index) => (
               <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 24 }}
+                key={project.slug}
+                initial={{ opacity: 0, y: 48 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: index * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="group"
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ delay: index * 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                <span className="text-caption uppercase tracking-widest text-muted-foreground">
-                  0{index + 1}
-                </span>
-                <h3 className="mt-4 text-display-sm font-display group-hover:text-primary transition-colors">
-                  {service.title}
-                </h3>
-                <p className="mt-4 text-body-md text-muted-foreground">
-                  {service.description}
-                </p>
+                <Link
+                  to={`/work/${project.slug}`}
+                  className="group block"
+                >
+                  <div className="relative aspect-[16/9] overflow-hidden bg-secondary">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="mt-8">
+                    <p className="text-sm uppercase tracking-widest text-muted-foreground mb-3">
+                      {project.category}
+                    </p>
+                    <h3 className="text-4xl md:text-5xl font-display group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -231,98 +171,114 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="mt-12"
+            className="mt-20 text-center"
           >
             <Link
-              to="/services"
-              className="inline-flex items-center gap-2 text-body-sm font-medium text-foreground hover:text-primary transition-colors group"
+              to="/work"
+              className="inline-flex items-center gap-3 text-lg font-medium text-foreground hover:text-primary transition-colors group border-b border-foreground/20 hover:border-primary pb-1"
             >
-              Explore Services
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              View all projects
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
             </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* Process */}
+      {/* Services - Testo, Niente Icone */}
       <section className="section-spacing">
         <div className="container-editorial">
-          <SectionHeading
-            label="Process"
-            title="How It Works"
-            description="A structured approach that respects your time and ensures scientific accuracy."
-          />
-
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6">
-            {processSteps.map((step, index) => (
-              <motion.div
-                key={step.number}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: index * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="relative pl-6 border-l border-border"
-              >
-                <span className="text-display-sm font-display text-muted-foreground/30">
-                  {step.number}
-                </span>
-                <h3 className="mt-2 text-body-lg font-medium font-display">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-body-sm text-muted-foreground">
-                  {step.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Mini Manifesto */}
-      <section className="section-spacing bg-foreground text-background">
-        <div className="container-editorial">
           <motion.div
-            initial={{ opacity: 0, y: 32 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-4xl mx-auto text-center"
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-3xl"
           >
-            <span className="text-caption uppercase tracking-widest text-background/60 mb-6 block">
-              Philosophy
-            </span>
-            <blockquote className="text-display-md font-display text-balance">
-              "Great scientific visualization is invisible. It serves the research, not the designer. Every element exists because the science demands it."
-            </blockquote>
+            <h2 className="text-4xl md:text-5xl font-display mb-12">
+              What we do
+            </h2>
+            
+            <div className="space-y-6 text-xl md:text-2xl leading-relaxed text-muted-foreground">
+              <p>– Scientific illustration for journals and covers</p>
+              <p>– Cinematic visualization for complex biological mechanisms</p>
+              <p>– Conceptual visuals for research communication</p>
+              <p>– Visual development for scientific storytelling</p>
+            </div>
+
+            <p className="mt-12 text-xl md:text-2xl leading-relaxed font-medium">
+              Each project is approached as a visual interpretation, not as a generic render.
+            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Contact Teaser */}
+      {/* Process - Tono Meno Burocratico */}
+      <section className="section-spacing bg-secondary/20">
+        <div className="container-editorial">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-3xl"
+          >
+            <h2 className="text-4xl md:text-5xl font-display mb-12">
+              Process
+            </h2>
+            
+            <div className="space-y-10">
+              <div>
+                <h3 className="text-2xl font-display mb-3">Scientific alignment</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  We work closely with researchers to ensure scientific accuracy at every stage.
+                </p>
+              </div>
+              
+              <div>
+                <h3 className="text-2xl font-display mb-3">Visual research</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Exploring visual directions that serve the narrative and the science.
+                </p>
+              </div>
+              
+              <div>
+                <h3 className="text-2xl font-display mb-3">Iterative development</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Visual decisions are discussed, tested and refined through iterations, balancing clarity and expressive power.
+                </p>
+              </div>
+              
+              <div>
+                <h3 className="text-2xl font-display mb-3">Final delivery</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Publication-ready files in all required formats and resolutions.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Teaser - Accessibilità Controllata */}
       <section className="section-spacing">
         <div className="container-editorial">
-          <div className="max-w-2xl mx-auto text-center">
+          <div className="max-w-2xl">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="text-caption uppercase tracking-widest text-muted-foreground mb-4 block">
-                Ready to Start?
-              </span>
-              <h2 className="text-display-md font-display">
-                Let's discuss your project
+              <h2 className="text-4xl md:text-5xl font-display mb-8">
+                For collaborations, inquiries or project discussions
               </h2>
-              <p className="mt-6 text-body-lg text-muted-foreground">
-                Whether you're preparing a journal submission or building a grant proposal, I'm here to help visualize your research.
-              </p>
+              
               <Link
                 to="/contact"
-                className="mt-10 inline-flex items-center gap-2 px-8 py-4 bg-foreground text-background font-medium transition-all duration-400 hover:bg-primary"
+                className="inline-flex items-center gap-3 text-xl font-medium text-foreground hover:text-primary transition-colors group border-b border-foreground/20 hover:border-primary pb-1"
               >
-                Get in Touch
-                <ArrowRight className="w-4 h-4" />
+                Get in touch
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
               </Link>
             </motion.div>
           </div>

@@ -7,26 +7,37 @@ const About = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-spacing pb-0">
+      <section className="section-spacing">
         <div className="container-editorial">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-3xl"
+            className="max-w-4xl"
           >
-            <span className="text-caption uppercase tracking-widest text-muted-foreground mb-4 block">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display leading-tight mb-12">
               About
-            </span>
-            <h1 className="text-display-lg font-display">
-              Scientific Precision, Cinematic Craft
             </h1>
+            
+            <div className="space-y-8 text-xl md:text-2xl leading-relaxed">
+              <p>
+                Industrial Magic is a scientific visualization studio founded by <strong>Antonino Campisi</strong>.
+              </p>
+              
+              <p className="text-muted-foreground">
+                The studio focuses on the intersection of science, cinematic language and editorial illustration.
+              </p>
+              
+              <p className="text-muted-foreground">
+                The work is driven by a belief that scientific images should not only explain, but communicate significance.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="section-spacing">
+      {/* Extended Content */}
+      <section className="section-spacing bg-secondary/20">
         <div className="container-editorial">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
             {/* Main Text */}
@@ -37,21 +48,24 @@ const About = () => {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-7"
             >
-              <div className="prose-editorial">
-                <p className="text-body-lg">
-                  Industrial Magic is a scientific visualization studio based in Italy, working with researchers, publishers, and institutions internationally.
+              <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
+                <p>
+                  Scientific visualization is often treated as technical documentation. Accurate, yes. But sterile. Forgettable.
                 </p>
-                <p className="text-body-md mt-6">
-                  The studio was founded on a simple premise: scientific imagery should be as rigorous as the research it represents. Too often, cover art and figures are treated as afterthoughts—rushed, generic, disconnected from the science. I believe they deserve better.
+                <p>
+                  I approach it differently.
                 </p>
-                <p className="text-body-md mt-6">
-                  Every project begins with the research itself. I work directly with scientists to understand their findings, then translate complex concepts into imagery that communicates with precision and impact. The goal is never decoration—it's clarity.
+                <p>
+                  Every image is an interpretation. A choice about what matters, what to emphasize, how to guide the eye. The science dictates the structure, but the visual language—composition, light, texture—comes from cinema, graphic novels, editorial illustration.
                 </p>
-                <p className="text-body-md mt-6">
-                  My background spans both science and visual production, which informs how I approach each project. I understand the pressures of publication timelines, the importance of accuracy, and the frustration of working with designers who don't speak your language.
+                <p>
+                  This isn't about making science "pretty." It's about making it felt. Making it understood not just intellectually, but viscerally.
                 </p>
-                <p className="text-body-md mt-6">
-                  The name "Industrial Magic" reflects a philosophy: what appears magical is actually the result of systematic craft. There's nothing mystical about good visualization—just deep understanding, technical skill, and disciplined execution.
+                <p>
+                  I work directly with researchers to ensure accuracy at every stage. But accuracy alone isn't enough. The goal is to create images that carry weight, that communicate the importance of the work, that make people stop and look.
+                </p>
+                <p>
+                  The name Industrial Magic reflects a philosophy: what appears effortless is the result of systematic craft. There's no magic—just deep understanding, technical skill, and disciplined execution.
                 </p>
               </div>
             </motion.div>
@@ -66,35 +80,35 @@ const About = () => {
             >
               <div className="space-y-12">
                 <div>
-                  <h3 className="text-caption uppercase tracking-widest text-muted-foreground mb-4">
+                  <h3 className="text-sm uppercase tracking-widest text-muted-foreground mb-6">
                     Focus Areas
                   </h3>
-                  <ul className="space-y-2">
-                    <li className="text-body-sm">Molecular Biology</li>
-                    <li className="text-body-sm">Neuroscience</li>
-                    <li className="text-body-sm">Immunology</li>
-                    <li className="text-body-sm">Structural Biology</li>
-                    <li className="text-body-sm">Cell Biology</li>
+                  <ul className="space-y-3 text-base">
+                    <li>Molecular Biology</li>
+                    <li>Neuroscience</li>
+                    <li>Immunology</li>
+                    <li>Structural Biology</li>
+                    <li>Cell Biology</li>
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="text-caption uppercase tracking-widest text-muted-foreground mb-4">
-                    Approach
+                  <h3 className="text-sm uppercase tracking-widest text-muted-foreground mb-6">
+                    Visual Influences
                   </h3>
-                  <ul className="space-y-2">
-                    <li className="text-body-sm">Research-first methodology</li>
-                    <li className="text-body-sm">Direct scientist collaboration</li>
-                    <li className="text-body-sm">Accuracy verification at every stage</li>
-                    <li className="text-body-sm">Publication-ready delivery</li>
+                  <ul className="space-y-3 text-base">
+                    <li>Cinematic VFX and lighting</li>
+                    <li>European graphic novels</li>
+                    <li>Editorial scientific illustration</li>
+                    <li>Architectural visualization</li>
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="text-caption uppercase tracking-widest text-muted-foreground mb-4">
+                  <h3 className="text-sm uppercase tracking-widest text-muted-foreground mb-6">
                     Location
                   </h3>
-                  <p className="text-body-sm">
+                  <p className="text-base">
                     Based in Italy<br />
                     Working internationally
                   </p>
@@ -105,72 +119,48 @@ const About = () => {
         </div>
       </section>
 
-      {/* Values */}
-      <section className="section-spacing bg-secondary/30">
+      {/* Philosophy */}
+      <section className="section-spacing">
         <div className="container-editorial">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-16"
+            className="max-w-3xl"
           >
-            <span className="text-caption uppercase tracking-widest text-muted-foreground mb-4 block">
-              Values
-            </span>
-            <h2 className="text-display-md font-display">
-              Principles That Guide the Work
+            <h2 className="text-4xl md:text-5xl font-display mb-12">
+              Approach
             </h2>
+            
+            <div className="space-y-10">
+              <div>
+                <h3 className="text-2xl font-display mb-3">Interpretation, not decoration</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Every visual decision is driven by the science. If an element doesn't serve understanding, it doesn't belong.
+                </p>
+              </div>
+              
+              <div>
+                <h3 className="text-2xl font-display mb-3">Collaboration, not execution</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  I work with researchers, not for them. The best results come from dialogue, not from following a brief blindly.
+                </p>
+              </div>
+              
+              <div>
+                <h3 className="text-2xl font-display mb-3">Craft, not automation</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  No templates. No presets. Every project is built from scratch, tailored to the specific research and publication context.
+                </p>
+              </div>
+            </div>
           </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h3 className="text-display-sm font-display mb-4">
-                Accuracy First
-              </h3>
-              <p className="text-body-md text-muted-foreground">
-                Beautiful imagery means nothing if it misrepresents the science. Accuracy is non-negotiable—verified at every stage, by you.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1, duration: 0.6 }}
-            >
-              <h3 className="text-display-sm font-display mb-4">
-                Clarity Over Decoration
-              </h3>
-              <p className="text-body-md text-muted-foreground">
-                Every visual element serves the science. If it doesn't aid understanding, it doesn't belong in the image.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-            >
-              <h3 className="text-display-sm font-display mb-4">
-                Respect for Process
-              </h3>
-              <p className="text-body-md text-muted-foreground">
-                Good work takes time and structure. Rushing leads to errors. A clear process protects both the quality and your peace of mind.
-              </p>
-            </motion.div>
-          </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="section-spacing">
+      <section className="section-spacing bg-secondary/20">
         <div className="container-editorial">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -179,18 +169,18 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="max-w-2xl"
           >
-            <h2 className="text-display-md font-display">
+            <h2 className="text-4xl md:text-5xl font-display mb-8">
               Let's work together
             </h2>
-            <p className="mt-4 text-body-lg text-muted-foreground">
-              If you're looking for visualization support that takes your research seriously, I'd welcome the conversation.
+            <p className="text-xl text-muted-foreground leading-relaxed mb-10">
+              If you're looking for visualization that takes your research seriously, I'd welcome the conversation.
             </p>
             <Link
               to="/contact"
-              className="mt-10 inline-flex items-center gap-2 px-8 py-4 bg-foreground text-background font-medium transition-all duration-400 hover:bg-primary"
+              className="inline-flex items-center gap-3 text-lg font-medium text-foreground hover:text-primary transition-colors group border-b border-foreground/20 hover:border-primary pb-1"
             >
-              Get in Touch
-              <ArrowRight className="w-4 h-4" />
+              Get in touch
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
             </Link>
           </motion.div>
         </div>
