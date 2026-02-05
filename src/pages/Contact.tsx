@@ -1,19 +1,21 @@
 import { motion } from 'framer-motion';
 import { Mail, ArrowUpRight } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
-
 const Contact = () => {
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero */}
       <section className="section-spacing pb-0">
         <div className="container-editorial">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-3xl"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 24
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8,
+          ease: [0.16, 1, 0.3, 1]
+        }} className="max-w-3xl">
             <span className="text-caption uppercase tracking-widest text-muted-foreground mb-4 block">
               Contact
             </span>
@@ -32,13 +34,18 @@ const Contact = () => {
         <div className="container-editorial">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
             {/* Main Contact */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-7"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 24
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6,
+            ease: [0.16, 1, 0.3, 1]
+          }} className="lg:col-span-7">
               <div className="space-y-12">
                 <div>
                   <h2 className="text-display-sm font-display mb-6">
@@ -47,12 +54,9 @@ const Contact = () => {
                   <p className="text-body-md text-muted-foreground mb-8">
                     For project inquiries, please include a brief description of your research, the type of visualization you need, and your approximate timeline. I'll respond within 24–48 hours.
                   </p>
-                  <a
-                    href="mailto:hello@industrialmagic.studio"
-                    className="inline-flex items-center gap-3 px-8 py-5 bg-foreground text-background font-medium transition-all duration-400 hover:bg-primary group"
-                  >
+                  <a className="inline-flex items-center gap-3 px-8 py-5 bg-foreground text-background font-medium transition-all duration-400 hover:bg-primary group" href="mailto:hello@industrialmagic.it">
                     <Mail className="w-5 h-5" />
-                    hello@industrialmagic.studio
+                    hello@industrialmagic.it
                     <ArrowUpRight className="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity" />
                   </a>
                 </div>
@@ -88,13 +92,19 @@ const Contact = () => {
             </motion.div>
 
             {/* Sidebar */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-5"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 24
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            delay: 0.2,
+            duration: 0.6,
+            ease: [0.16, 1, 0.3, 1]
+          }} className="lg:col-span-5">
               <div className="space-y-12">
                 <div>
                   <h3 className="text-caption uppercase tracking-widest text-muted-foreground mb-4">
@@ -128,7 +138,7 @@ const Contact = () => {
                   OPTIONAL: External form integration
                   Uncomment and configure for Formspree, StaticForms, etc.
                   
-                <div className="pt-8 border-t border-border">
+                 <div className="pt-8 border-t border-border">
                   <h3 className="text-caption uppercase tracking-widest text-muted-foreground mb-4">
                     Prefer a Form?
                   </h3>
@@ -141,8 +151,8 @@ const Contact = () => {
                     Use the contact form
                     <ArrowUpRight className="w-4 h-4" />
                   </a>
-                </div>
-                */}
+                 </div>
+                 */}
               </div>
             </motion.div>
           </div>
@@ -152,13 +162,17 @@ const Contact = () => {
       {/* Location Note */}
       <section className="section-spacing bg-secondary/30">
         <div className="container-editorial">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-2xl mx-auto"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 24
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.6
+        }} className="text-center max-w-2xl mx-auto">
             <h2 className="text-display-sm font-display mb-4">
               Based in Italy, Working Globally
             </h2>
@@ -168,8 +182,6 @@ const Contact = () => {
           </motion.div>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Contact;

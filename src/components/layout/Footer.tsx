@@ -1,10 +1,7 @@
 import { Link } from 'react-router-dom';
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="border-t border-border bg-background">
+  return <footer className="border-t border-border bg-background">
       <div className="container-editorial py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
           {/* Brand */}
@@ -65,12 +62,7 @@ const Footer = () => {
             <h4 className="text-caption uppercase tracking-widest text-muted-foreground mb-4">
               Get in Touch
             </h4>
-            <a 
-              href="mailto:hello@industrialmagic.studio" 
-              className="text-body-sm text-foreground hover:text-primary transition-colors"
-            >
-              hello@industrialmagic.studio
-            </a>
+            <a href="mailto:hello@industrialmagic.studio" className="text-body-sm text-foreground hover:text-primary transition-colors">hello@industrialmagic.it</a>
           </div>
         </div>
 
@@ -86,8 +78,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
