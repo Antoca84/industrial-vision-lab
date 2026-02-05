@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => ({
   // For GitHub Pages:
   // - User/Org page (username.github.io): use base: '/'
   // - Project page (github.com/username/repo): use base: '/repo-name/'
-  base: process.env.VITE_BASE_URL || '/',
+  base: '/industrial-vision-lab/',
   server: {
     host: "::",
     port: 8080,
