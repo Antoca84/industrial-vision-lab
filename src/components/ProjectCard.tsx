@@ -4,15 +4,29 @@ import { motion } from 'framer-motion';
 interface ProjectCardProps {
   slug: string;
   title: string;
-  category: string;
+  category?: string;
   image: string;
   index?: number;
+  aspect?: 'square' | 'portrait' | 'landscape' | 'wide';
 }
 
-const ProjectCard = ({ slug, title, category, image, index = 0 }: ProjectCardProps) => {
+const aspectClasses = {
+  square: 'aspect-square',
+  portrait: 'aspect-[3/4]',
+  landscape: 'aspect-[4/3]',
+  wide: 'aspect-[16/9]',
+};
+
+const ProjectCard = ({ 
+  slug, 
+  title, 
+  image, 
+  index = 0,
+  aspect = 'landscape' 
+}: ProjectCardProps) => {
   return (
     <motion.article
-      initial={{ opacity: 0, y: 32 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ 
@@ -22,27 +36,20 @@ const ProjectCard = ({ slug, title, category, image, index = 0 }: ProjectCardPro
       }}
     >
       <Link to={`/work/${slug}`} className="group block">
-        {/* Image Container */}
-        <div className="relative aspect-[4/3] overflow-hidden bg-secondary">
+        {/* Image Plate */}
+        <div className={`image-plate ${aspectClasses[aspect]}`}>
           <img
             src={image}
             alt={title}
             loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-800 ease-out-expo group-hover:scale-105"
+            className="w-full h-full object-cover"
           />
-          {/* Subtle overlay on hover */}
-          <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-400" />
         </div>
 
-        {/* Text Content */}
-        <div className="mt-6">
-          <span className="text-caption uppercase tracking-widest text-muted-foreground">
-            {category}
-          </span>
-          <h3 className="mt-2 text-display-sm font-display group-hover:text-primary transition-colors duration-400">
-            {title}
-          </h3>
-        </div>
+        {/* Title - Minimal */}
+        <h3 className="mt-5 font-display text-display-sm italic text-foreground group-hover:text-accent transition-colors duration-500">
+          {title}
+        </h3>
       </Link>
     </motion.article>
   );

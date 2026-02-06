@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 
 import project01 from '@/assets/project-01.jpg';
@@ -10,20 +9,17 @@ import project03 from '@/assets/project-03.jpg';
 const projects = [
   {
     slug: 'cellular-interaction-study',
-    title: 'Cellular Interaction Study',
-    category: 'Graphic-novel scientific illustration',
+    title: 'Cellular Interactions',
     image: project01,
   },
   {
     slug: 'molecular-mechanism-visualization',
-    title: 'Molecular Mechanism Visualization',
-    category: 'Cinematic biological rendering',
+    title: 'Molecular Mechanisms',
     image: project02,
   },
   {
     slug: 'protein-structure-interpretation',
-    title: 'Protein Structure Interpretation',
-    category: 'Editorial cover art',
+    title: 'Protein Structures',
     image: project03,
   },
 ];
@@ -31,91 +27,110 @@ const projects = [
 const Work = () => {
   return (
     <Layout>
-      {/* Hero - Confident, Minimal */}
-      <section className="section-spacing pb-12 md:pb-16">
-        <div className="container-editorial">
-          <motion.div
+      {/* Hero - Sparse */}
+      <section className="pt-32 md:pt-40 pb-16 md:pb-20">
+        <div className="container-lab">
+          <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-4xl"
+            className="font-display text-display-xl italic"
           >
-            <h1 className="text-display-xl font-display mb-8">
-              Selected Work
-            </h1>
-            
-            <p className="text-body-xl text-muted-foreground max-w-2xl leading-relaxed">
-              Visual interpretations created for research publications, scientific journals, and academic institutions.
-            </p>
-          </motion.div>
+            Works
+          </motion.h1>
         </div>
       </section>
 
-      {/* Projects - Cinematic Full Bleed */}
-      <section className="pb-20 md:pb-32">
-        <div className="space-y-24 md:space-y-40">
-          {projects.map((project, index) => (
+      {/* Projects - Art Book Layout */}
+      <section className="pb-24 md:pb-40">
+        {/* First - Full Bleed Plate */}
+        <motion.article
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="mb-6"
+        >
+          <Link to={`/work/${projects[0].slug}`} className="group block">
+            <div className="image-plate aspect-[21/9]">
+              <img
+                src={projects[0].image}
+                alt={projects[0].title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="container-lab mt-6">
+              <h2 className="font-display text-display-md italic group-hover:text-accent transition-colors duration-500">
+                {projects[0].title}
+              </h2>
+            </div>
+          </Link>
+        </motion.article>
+
+        {/* Asymmetric Grid */}
+        <div className="container-lab">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+            {/* Second - Larger */}
             <motion.article
-              key={project.slug}
-              initial={{ opacity: 0, y: 60 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="md:col-span-7"
             >
-              <Link
-                to={`/work/${project.slug}`}
-                className="group block"
-              >
-                {/* Full Bleed Image */}
-                <div className="img-cinematic aspect-[21/9] md:aspect-[2.5/1]">
+              <Link to={`/work/${projects[1].slug}`} className="group block">
+                <div className="image-plate aspect-[4/3]">
                   <img
-                    src={project.image}
-                    alt={project.title}
+                    src={projects[1].image}
+                    alt={projects[1].title}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                
-                {/* Overlapping Text */}
-                <div className="container-editorial">
-                  <div className="overlap-text bg-background inline-block pr-8 md:pr-16 pt-6">
-                    <p className="text-overline uppercase text-muted-foreground mb-3">
-                      {project.category}
-                    </p>
-                    <h2 className="text-display-lg md:text-display-xl font-display group-hover:text-primary transition-colors duration-500">
-                      {project.title}
-                    </h2>
-                  </div>
-                </div>
+                <h2 className="mt-6 font-display text-display-sm italic group-hover:text-accent transition-colors duration-500">
+                  {projects[1].title}
+                </h2>
               </Link>
             </motion.article>
-          ))}
+
+            {/* Third - Offset */}
+            <motion.article
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="md:col-span-5 md:mt-32"
+            >
+              <Link to={`/work/${projects[2].slug}`} className="group block">
+                <div className="image-plate aspect-[3/4]">
+                  <img
+                    src={projects[2].image}
+                    alt={projects[2].title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h2 className="mt-6 font-display text-display-sm italic group-hover:text-accent transition-colors duration-500">
+                  {projects[2].title}
+                </h2>
+              </Link>
+            </motion.article>
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-spacing border-t border-border">
-        <div className="container-editorial">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-2xl"
-          >
-            <h2 className="text-display-md font-display mb-6">
-              Have a project in mind?
-            </h2>
-            <p className="text-body-lg text-muted-foreground mb-10 leading-relaxed">
-              Let's discuss how we can visualize your research.
+      {/* Contact - Minimal */}
+      <section className="section-dense border-t border-border">
+        <div className="container-lab">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <p className="font-display text-display-sm italic">
+              Discuss a project.
             </p>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-3 text-lg font-medium"
+              className="link-subtle text-caption uppercase tracking-widest text-muted-foreground"
             >
-              <span className="link-cinematic">Get in touch</span>
-              <ArrowRight className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-2" />
+              Contact
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
     </Layout>
