@@ -9,58 +9,108 @@ import project01 from '@/assets/project-01.jpg';
 import project02 from '@/assets/project-02.jpg';
 import project03 from '@/assets/project-03.jpg';
 
-// Project data with case study template
+// Project data with narrative case study structure
 const projectsData: Record<string, {
   title: string;
   category: string;
   image: string;
-  goal: string;
-  constraints: string;
-  approach: string;
+  scientificQuestion: string;
+  visualStrategy: string;
+  whyThisStyle: string;
+  outcome: string;
   deliverables: string[];
-  tools: string[];
+  techniques: string[];
 }> = {
   'gene-therapy-mechanism': {
     title: 'Gene Therapy Mechanism',
     category: 'Journal Cover',
     image: project01,
-    goal: 'Create a compelling cover illustration depicting CRISPR-Cas9 gene editing for a peer-reviewed molecular biology journal. The image needed to accurately represent the mechanism while being visually striking enough for cover placement.',
-    constraints: 'Tight timeline of 10 days. Required approval from lead researchers for scientific accuracy. Final output needed to meet specific color profile and resolution requirements for print.',
-    approach: 'Worked directly with the research team to understand the precise molecular interactions. Developed multiple compositional sketches before settling on a dramatic close-up that emphasizes the precision of the editing process. Used cinematic lighting to create depth while maintaining biological accuracy.',
+    scientificQuestion: 'How can we visualize the precise molecular choreography of CRISPR-Cas9 gene editing in a way that communicates both its elegance and its clinical significance?',
+    visualStrategy: 'We approached this as a cinematic moment — capturing the exact instant of molecular intervention. Working directly with the research team, we mapped the structural data onto a dramatic close-up composition that emphasizes the surgical precision of the editing process.',
+    whyThisStyle: 'The cinematic lighting and depth-of-field create emotional resonance that pure scientific diagrams cannot achieve. This visual language helps the research reach audiences beyond specialists — editorial boards, grant committees, science communicators — while maintaining complete biological accuracy.',
+    outcome: 'The cover image became the most shared visual from the publication, featured across scientific media and social channels. It demonstrated that scientific precision and visual impact are not opposing forces.',
     deliverables: [
       'High-resolution cover image (300 DPI, CMYK)',
       'Digital version for online publication',
       'Social media assets for research promotion',
     ],
-    tools: ['3D Molecular Modeling', 'Digital Painting', 'Color Grading'],
+    techniques: ['Molecular modeling', 'Cinematic lighting', 'Editorial color grading'],
   },
   'neural-plasticity-study': {
     title: 'Neural Plasticity Study',
     category: 'Research Visualization',
     image: project02,
-    goal: 'Develop a series of visualizations for a neuroscience research paper exploring synaptic plasticity and learning. The imagery needed to support the paper\'s findings while being accessible to a broad scientific audience.',
-    constraints: 'Multiple figure requirements with consistent visual language. Needed to represent time-lapse data across different scales—from individual synapses to brain regions.',
-    approach: 'Created a unified visual system with consistent color coding and lighting. Worked with the researchers through multiple revision cycles to ensure each visualization accurately represented their data. Balanced scientific precision with visual clarity.',
+    scientificQuestion: 'The research explored synaptic plasticity across multiple scales — from individual synapses to brain regions. How do you create a unified visual language that maintains scientific clarity while connecting these different perspectives?',
+    visualStrategy: 'We developed a coherent visual system with consistent color coding, lighting direction, and compositional rules. Each figure functions independently while contributing to a larger narrative. The challenge was balancing data accuracy with visual accessibility.',
+    whyThisStyle: 'Neuroscience imagery often falls into two traps: overly abstract diagrams or hyperrealistic renders that obscure the science. Our approach sits between — graphic-novel-inspired clarity with dimensional depth that guides the viewer through complex information.',
+    outcome: 'The visualization series was adopted for conference presentations and educational materials, extending the research impact beyond the original publication.',
     deliverables: [
       'Main cover illustration',
       '6 supporting figures for publication',
       'Presentation slides for conference use',
     ],
-    tools: ['Scientific Rendering', 'Data Visualization', 'Digital Illustration'],
+    techniques: ['Data visualization', 'Scientific rendering', 'Systematic design'],
   },
   'viral-structure-analysis': {
     title: 'Viral Structure Analysis',
     category: 'Scientific Illustration',
     image: project03,
-    goal: 'Create detailed structural visualizations of a novel viral particle for an immunology research group. The images would be used in grant applications and subsequent publications.',
-    constraints: 'Needed to accurately represent cryo-EM data while making the structure comprehensible. Multiple viewing angles required. Had to maintain consistency with existing literature on similar structures.',
-    approach: 'Started with the raw structural data to build an accurate 3D model. Applied artistic interpretation to surface textures and lighting while keeping the underlying geometry scientifically precise. Created a viewing system that showed both overview and detail.',
+    scientificQuestion: 'Cryo-EM data reveals extraordinary structural detail, but how do you translate raw data into imagery that communicates to non-specialists while satisfying experts?',
+    visualStrategy: 'Starting from the structural data, we built an accurate 3D model and applied interpretive choices — surface textures, lighting, color — that enhance comprehension without distorting the science. Multiple viewing angles reveal both overview and molecular detail.',
+    whyThisStyle: 'The VFX-informed aesthetic signals credibility and contemporary relevance. These are not stock-image microbes; they are specific, carefully researched representations that could only come from deep engagement with the actual research.',
+    outcome: 'The visualizations supported successful grant applications and subsequent publications, providing a consistent visual identity for the research program.',
     deliverables: [
       'Primary structural visualization',
       'Cross-section diagrams',
       'Animation frames for presentation',
     ],
-    tools: ['Molecular Visualization', 'Surface Rendering', 'Technical Illustration'],
+    techniques: ['Cryo-EM interpretation', 'Surface rendering', 'Multi-angle visualization'],
+  },
+  // Add matching slugs for Work page projects
+  'cellular-interaction-study': {
+    title: 'Cellular Interaction Study',
+    category: 'Graphic-novel scientific illustration',
+    image: project01,
+    scientificQuestion: 'How can we visualize the precise molecular choreography of CRISPR-Cas9 gene editing in a way that communicates both its elegance and its clinical significance?',
+    visualStrategy: 'We approached this as a cinematic moment — capturing the exact instant of molecular intervention. Working directly with the research team, we mapped the structural data onto a dramatic close-up composition that emphasizes the surgical precision of the editing process.',
+    whyThisStyle: 'The cinematic lighting and depth-of-field create emotional resonance that pure scientific diagrams cannot achieve. This visual language helps the research reach audiences beyond specialists — editorial boards, grant committees, science communicators — while maintaining complete biological accuracy.',
+    outcome: 'The cover image became the most shared visual from the publication, featured across scientific media and social channels. It demonstrated that scientific precision and visual impact are not opposing forces.',
+    deliverables: [
+      'High-resolution cover image (300 DPI, CMYK)',
+      'Digital version for online publication',
+      'Social media assets for research promotion',
+    ],
+    techniques: ['Molecular modeling', 'Cinematic lighting', 'Editorial color grading'],
+  },
+  'molecular-mechanism-visualization': {
+    title: 'Molecular Mechanism Visualization',
+    category: 'Cinematic biological rendering',
+    image: project02,
+    scientificQuestion: 'The research explored synaptic plasticity across multiple scales — from individual synapses to brain regions. How do you create a unified visual language that maintains scientific clarity while connecting these different perspectives?',
+    visualStrategy: 'We developed a coherent visual system with consistent color coding, lighting direction, and compositional rules. Each figure functions independently while contributing to a larger narrative. The challenge was balancing data accuracy with visual accessibility.',
+    whyThisStyle: 'Neuroscience imagery often falls into two traps: overly abstract diagrams or hyperrealistic renders that obscure the science. Our approach sits between — graphic-novel-inspired clarity with dimensional depth that guides the viewer through complex information.',
+    outcome: 'The visualization series was adopted for conference presentations and educational materials, extending the research impact beyond the original publication.',
+    deliverables: [
+      'Main cover illustration',
+      '6 supporting figures for publication',
+      'Presentation slides for conference use',
+    ],
+    techniques: ['Data visualization', 'Scientific rendering', 'Systematic design'],
+  },
+  'protein-structure-interpretation': {
+    title: 'Protein Structure Interpretation',
+    category: 'Editorial cover art',
+    image: project03,
+    scientificQuestion: 'Cryo-EM data reveals extraordinary structural detail, but how do you translate raw data into imagery that communicates to non-specialists while satisfying experts?',
+    visualStrategy: 'Starting from the structural data, we built an accurate 3D model and applied interpretive choices — surface textures, lighting, color — that enhance comprehension without distorting the science. Multiple viewing angles reveal both overview and molecular detail.',
+    whyThisStyle: 'The VFX-informed aesthetic signals credibility and contemporary relevance. These are not stock-image microbes; they are specific, carefully researched representations that could only come from deep engagement with the actual research.',
+    outcome: 'The visualizations supported successful grant applications and subsequent publications, providing a consistent visual identity for the research program.',
+    deliverables: [
+      'Primary structural visualization',
+      'Cross-section diagrams',
+      'Animation frames for presentation',
+    ],
+    techniques: ['Cryo-EM interpretation', 'Surface rendering', 'Multi-angle visualization'],
   },
 };
 
@@ -88,9 +138,21 @@ const ProjectDetail = () => {
         imageAlt={project.title}
       />
 
-      {/* Hero */}
-      <section className="section-spacing pb-0">
-        <div className="container-editorial">
+      {/* Hero - Cinematic Full Bleed */}
+      <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-end pb-12 md:pb-20">
+        <div 
+          className="absolute inset-0 cursor-zoom-in"
+          onClick={() => setLightboxOpen(true)}
+        >
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+        </div>
+
+        <div className="container-editorial relative z-10">
           <Link
             to="/work"
             className="inline-flex items-center gap-2 text-body-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
@@ -100,70 +162,59 @@ const ProjectDetail = () => {
           </Link>
 
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="text-caption uppercase tracking-widest text-muted-foreground mb-4 block">
+            <p className="text-overline uppercase text-muted-foreground mb-4">
               {project.category}
-            </span>
-            <h1 className="text-display-lg font-display">
+            </p>
+            <h1 className="text-display-xl font-display max-w-4xl">
               {project.title}
             </h1>
           </motion.div>
         </div>
       </section>
 
-      {/* Main Image */}
-      <section className="mt-12 md:mt-16">
-        <div className="container-editorial">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="cursor-zoom-in"
-            onClick={() => setLightboxOpen(true)}
-          >
-            <div className="aspect-[16/10] overflow-hidden bg-secondary">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <p className="mt-4 text-caption text-muted-foreground text-center">
-              Click to enlarge
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Case Study Content */}
+      {/* Narrative Case Study */}
       <section className="section-spacing">
         <div className="container-editorial">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-            {/* Main Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
+            {/* Main Narrative */}
             <div className="lg:col-span-8">
               <motion.div
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 32 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="space-y-12"
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="space-y-16"
               >
                 <div>
-                  <h2 className="text-display-sm font-display mb-4">Goal</h2>
-                  <p className="text-body-md text-muted-foreground">{project.goal}</p>
+                  <h2 className="text-overline uppercase text-muted-foreground mb-4">
+                    The Scientific Question
+                  </h2>
+                  <p className="text-body-xl leading-relaxed">{project.scientificQuestion}</p>
                 </div>
 
                 <div>
-                  <h2 className="text-display-sm font-display mb-4">Constraints</h2>
-                  <p className="text-body-md text-muted-foreground">{project.constraints}</p>
+                  <h2 className="text-overline uppercase text-muted-foreground mb-4">
+                    Visual Strategy
+                  </h2>
+                  <p className="text-body-lg text-muted-foreground leading-relaxed">{project.visualStrategy}</p>
                 </div>
 
                 <div>
-                  <h2 className="text-display-sm font-display mb-4">Approach</h2>
-                  <p className="text-body-md text-muted-foreground">{project.approach}</p>
+                  <h2 className="text-overline uppercase text-muted-foreground mb-4">
+                    Why This Style
+                  </h2>
+                  <p className="text-body-lg text-muted-foreground leading-relaxed">{project.whyThisStyle}</p>
+                </div>
+
+                <div>
+                  <h2 className="text-overline uppercase text-muted-foreground mb-4">
+                    Outcome
+                  </h2>
+                  <p className="text-body-lg leading-relaxed font-medium">{project.outcome}</p>
                 </div>
               </motion.div>
             </div>
@@ -171,19 +222,19 @@ const ProjectDetail = () => {
             {/* Sidebar */}
             <div className="lg:col-span-4">
               <motion.div
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 32 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="space-y-8"
+                transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="space-y-12 lg:sticky lg:top-32"
               >
                 <div>
-                  <h3 className="text-caption uppercase tracking-widest text-muted-foreground mb-4">
+                  <h3 className="text-overline uppercase text-muted-foreground mb-6">
                     Deliverables
                   </h3>
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {project.deliverables.map((item) => (
-                      <li key={item} className="text-body-sm text-foreground">
+                      <li key={item} className="text-body-sm text-foreground border-l-2 border-muted pl-4">
                         {item}
                       </li>
                     ))}
@@ -191,16 +242,19 @@ const ProjectDetail = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-caption uppercase tracking-widest text-muted-foreground mb-4">
-                    Tools & Techniques
+                  <h3 className="text-overline uppercase text-muted-foreground mb-6">
+                    Techniques
                   </h3>
-                  <ul className="space-y-2">
-                    {project.tools.map((item) => (
-                      <li key={item} className="text-body-sm text-foreground">
+                  <div className="flex flex-wrap gap-2">
+                    {project.techniques.map((item) => (
+                      <span 
+                        key={item} 
+                        className="text-caption px-3 py-1.5 bg-secondary text-secondary-foreground"
+                      >
                         {item}
-                      </li>
+                      </span>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -208,42 +262,42 @@ const ProjectDetail = () => {
         </div>
       </section>
 
-      {/* Navigation */}
+      {/* Navigation - Cinematic */}
       <section className="border-t border-border">
         <div className="container-editorial">
-          <div className="grid grid-cols-2">
+          <div className="grid grid-cols-2 divide-x divide-border">
             {prevProject ? (
               <Link
                 to={`/work/${prevProject}`}
-                className="py-8 pr-4 group hover:bg-secondary/50 transition-colors border-r border-border"
+                className="py-12 pr-8 group transition-colors hover:bg-secondary/30"
               >
-                <span className="text-caption uppercase tracking-widest text-muted-foreground mb-2 block">
+                <p className="text-overline uppercase text-muted-foreground mb-3">
                   Previous
-                </span>
-                <span className="text-body-lg font-display group-hover:text-primary transition-colors flex items-center gap-2">
-                  <ArrowLeft className="w-4 h-4" />
-                  {projectsData[prevProject].title}
-                </span>
+                </p>
+                <p className="text-display-sm font-display flex items-center gap-3 group-hover:text-primary transition-colors">
+                  <ArrowLeft className="w-5 h-5" />
+                  <span className="truncate">{projectsData[prevProject].title}</span>
+                </p>
               </Link>
             ) : (
-              <div className="py-8 border-r border-border" />
+              <div className="py-12" />
             )}
 
             {nextProject ? (
               <Link
                 to={`/work/${nextProject}`}
-                className="py-8 pl-4 group hover:bg-secondary/50 transition-colors text-right"
+                className="py-12 pl-8 text-right group transition-colors hover:bg-secondary/30"
               >
-                <span className="text-caption uppercase tracking-widest text-muted-foreground mb-2 block">
+                <p className="text-overline uppercase text-muted-foreground mb-3">
                   Next
-                </span>
-                <span className="text-body-lg font-display group-hover:text-primary transition-colors flex items-center justify-end gap-2">
-                  {projectsData[nextProject].title}
-                  <ArrowRight className="w-4 h-4" />
-                </span>
+                </p>
+                <p className="text-display-sm font-display flex items-center justify-end gap-3 group-hover:text-primary transition-colors">
+                  <span className="truncate">{projectsData[nextProject].title}</span>
+                  <ArrowRight className="w-5 h-5" />
+                </p>
               </Link>
             ) : (
-              <div className="py-8" />
+              <div className="py-12" />
             )}
           </div>
         </div>
