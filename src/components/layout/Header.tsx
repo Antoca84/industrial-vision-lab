@@ -3,10 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navItems = [
-  { href: '/', label: 'Home' },
   { href: '/work', label: 'Work' },
-  { href: '/services', label: 'Services' },
-  { href: '/process', label: 'Process' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -16,27 +13,27 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
-      <nav className="container-editorial">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo - Bold, Confident */}
+    <header className="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
+      <nav className="container-lab">
+        <div className="flex items-center justify-between h-20 md:h-24">
+          {/* Logo - Minimal */}
           <Link 
             to="/" 
-            className="font-display text-lg md:text-xl font-medium tracking-tight hover:text-primary transition-colors duration-500"
+            className="font-display text-lg italic text-white hover:opacity-70 transition-opacity duration-500"
           >
             Industrial Magic
           </Link>
 
-          {/* Desktop Navigation - Minimal */}
-          <ul className="hidden md:flex items-center gap-10">
-            {navItems.slice(1).map((item) => (
+          {/* Desktop Navigation - Sparse */}
+          <ul className="hidden md:flex items-center gap-12">
+            {navItems.map((item) => (
               <li key={item.href}>
                 <Link
                   to={item.href}
-                  className={`text-body-sm font-medium transition-colors duration-400 hover:text-foreground ${
+                  className={`text-caption uppercase tracking-widest transition-opacity duration-500 ${
                     location.pathname === item.href 
-                      ? 'text-foreground' 
-                      : 'text-muted-foreground'
+                      ? 'text-white' 
+                      : 'text-white/60 hover:text-white'
                   }`}
                 >
                   {item.label}
@@ -54,15 +51,15 @@ const Header = () => {
             <div className="flex flex-col gap-1.5">
               <motion.span
                 animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-                className="block w-6 h-0.5 bg-foreground origin-center"
+                className="block w-6 h-px bg-white origin-center"
               />
               <motion.span
                 animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-                className="block w-6 h-0.5 bg-foreground"
+                className="block w-6 h-px bg-white"
               />
               <motion.span
                 animate={isOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-                className="block w-6 h-0.5 bg-foreground origin-center"
+                className="block w-6 h-px bg-white origin-center"
               />
             </div>
           </button>
@@ -76,22 +73,36 @@ const Header = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="md:hidden fixed inset-0 top-16 bg-background z-40"
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="md:hidden fixed inset-0 bg-background z-40"
           >
-            <ul className="container-editorial py-12 flex flex-col gap-6">
+            <ul className="container-lab pt-32 flex flex-col gap-8">
+              <motion.li
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ delay: 0.1, duration: 0.5 }}
+              >
+                <Link
+                  to="/"
+                  onClick={() => setIsOpen(false)}
+                  className="font-display text-display-lg italic"
+                >
+                  Home
+                </Link>
+              </motion.li>
               {navItems.map((item, index) => (
                 <motion.li
                   key={item.href}
-                  initial={{ opacity: 0, x: -24 }}
+                  initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -24 }}
-                  transition={{ delay: index * 0.05, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ delay: (index + 2) * 0.05, duration: 0.5 }}
                 >
                   <Link
                     to={item.href}
                     onClick={() => setIsOpen(false)}
-                    className={`text-display-md font-display block ${
+                    className={`font-display text-display-lg italic ${
                       location.pathname === item.href 
                         ? 'text-foreground' 
                         : 'text-muted-foreground'

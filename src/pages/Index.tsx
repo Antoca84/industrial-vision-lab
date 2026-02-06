@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 
 import heroImage from '@/assets/hero-image.jpg';
@@ -8,23 +7,20 @@ import project01 from '@/assets/project-01.jpg';
 import project02 from '@/assets/project-02.jpg';
 import project03 from '@/assets/project-03.jpg';
 
-const featuredProjects = [
+const works = [
   {
     slug: 'cellular-interaction-study',
-    title: 'Cellular Interaction Study',
-    category: 'Graphic-novel scientific illustration',
+    title: 'Cellular Interactions',
     image: project01,
   },
   {
     slug: 'molecular-mechanism-visualization',
-    title: 'Molecular Mechanism Visualization',
-    category: 'Cinematic biological rendering',
+    title: 'Molecular Mechanisms',
     image: project02,
   },
   {
     slug: 'protein-structure-interpretation',
-    title: 'Protein Structure Interpretation',
-    category: 'Editorial cover art',
+    title: 'Protein Structures',
     image: project03,
   },
 ];
@@ -32,230 +28,205 @@ const featuredProjects = [
 const Index = () => {
   return (
     <Layout>
-      {/* Hero - Full Bleed Cinematic */}
-      <section className="relative min-h-[100vh] flex items-end pb-16 md:pb-24">
-        {/* Background - The Image IS the Hero */}
+      {/* Hero - Full Bleed, Image as Content */}
+      <section className="relative min-h-screen">
         <div className="absolute inset-0">
           <img
             src={heroImage}
-            alt="Scientific visualization"
+            alt="Visual interpretation"
             className="w-full h-full object-cover"
           />
-          {/* Cinematic gradient - dramatic bottom fade */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-transparent" />
+          {/* Minimal gradient - let the image breathe */}
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90" />
         </div>
 
-        <div className="container-editorial relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-4xl"
-          >
-            <h1 className="text-display-hero font-display text-balance">
-              Science, interpreted.
-            </h1>
-            
-            <p className="mt-8 text-body-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed">
-              Visual narratives for biological research. Where scientific accuracy meets cinematic expression.
-            </p>
+        {/* Floating title - asymmetric placement */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, delay: 0.5 }}
+          className="absolute bottom-12 left-6 md:bottom-20 md:left-12 lg:left-20 z-10"
+        >
+          <h1 className="font-display text-display-massive italic text-foreground">
+            Visual<br />
+            <span className="not-italic">Laboratory</span>
+          </h1>
+        </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="mt-12 flex items-center gap-8"
-            >
-              <Link
-                to="/work"
-                className="group inline-flex items-center gap-3 text-lg font-medium text-foreground"
-              >
-                <span className="link-cinematic">View work</span>
-                <ArrowRight className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-2" />
-              </Link>
-            </motion.div>
-          </motion.div>
-        </div>
+        {/* Subtle scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.5 }}
+          transition={{ duration: 1, delay: 2 }}
+          className="absolute bottom-12 right-6 md:right-12 lg:right-20 z-10"
+        >
+          <span className="text-caption uppercase text-muted-foreground tracking-widest vertical-rl">
+            Scroll
+          </span>
+        </motion.div>
       </section>
 
-      {/* Manifesto - Bold Statement */}
-      <section className="section-spacing bg-secondary">
-        <div className="container-editorial">
+      {/* Manifesto - Minimal, Bold */}
+      <section className="section-massive">
+        <div className="container-offset-left">
           <motion.div
-            initial={{ opacity: 0, y: 32 }}
+            initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-5xl"
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-4xl"
           >
-            <p className="text-overline uppercase text-muted-foreground mb-8">
-              Manifesto
-            </p>
-            
-            <div className="space-y-8 text-manifesto">
-              <p>
-                We don't make diagrams.
+            <div className="manifesto-block">
+              <p className="font-display text-display-lg italic text-foreground mb-8">
+                We do not create diagrams.
               </p>
-              <p className="text-muted-foreground">
-                We create visual interpretations of science — where every composition, every shadow, every color choice carries meaning.
+              <p className="font-display text-display-md text-muted-foreground mb-12">
+                We create visual interpretations of biological phenomena — 
+                images that communicate meaning, not just information.
               </p>
-              <p>
-                Our work exists at the intersection of scientific accuracy and cinematic expression.
-              </p>
-              <p className="text-muted-foreground">
-                Informed by VFX, editorial illustration, and graphic-novel language, we transform complex biological research into images that communicate, not just illustrate.
-              </p>
+              <div className="rule-short" />
             </div>
-
-            <div className="mt-16 divider-bold" />
           </motion.div>
         </div>
       </section>
 
-      {/* Selected Work - Cinematic Grid */}
-      <section className="section-spacing">
-        <div className="container-editorial">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="flex items-end justify-between mb-16"
-          >
-            <h2 className="text-display-lg font-display">
-              Selected Work
-            </h2>
-            <Link
-              to="/work"
-              className="hidden md:flex items-center gap-2 text-body-sm text-muted-foreground hover:text-foreground transition-colors group"
-            >
-              All projects
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </motion.div>
-
-          <div className="space-y-20 md:space-y-32">
-            {featuredProjects.map((project, index) => (
-              <motion.article
-                key={project.slug}
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <Link
-                  to={`/work/${project.slug}`}
-                  className="group block"
-                >
-                  {/* Cinematic Image Frame */}
-                  <div className="img-cinematic aspect-[21/9] md:aspect-[2.35/1]">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  
-                  {/* Overlapping Text - Graphic Novel Style */}
-                  <div className="overlap-text bg-background inline-block pr-8 md:pr-16 pt-6">
-                    <p className="text-overline uppercase text-muted-foreground mb-3">
-                      {project.category}
-                    </p>
-                    <h3 className="text-display-md md:text-display-lg font-display group-hover:text-primary transition-colors duration-500">
-                      {project.title}
-                    </h3>
-                  </div>
-                </Link>
-              </motion.article>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mt-16 md:hidden text-center"
-          >
-            <Link
-              to="/work"
-              className="inline-flex items-center gap-2 text-body-md font-medium group"
-            >
-              <span className="link-cinematic">View all projects</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </motion.div>
+      {/* Works - Large Plates, Asymmetric Grid */}
+      <section className="pb-24 md:pb-32">
+        <div className="container-lab mb-12">
+          <span className="text-caption uppercase text-muted-foreground tracking-widest">
+            Selected Works
+          </span>
         </div>
-      </section>
 
-      {/* What We Do - Confident, Minimal */}
-      <section className="section-spacing bg-card">
-        <div className="container-editorial">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <p className="text-overline uppercase text-muted-foreground mb-6">
-                Capabilities
-              </p>
-              <h2 className="text-display-md font-display">
-                Visual interpretation for scientific research
+        {/* First work - Full bleed */}
+        <motion.article
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1 }}
+          className="mb-4"
+        >
+          <Link to={`/work/${works[0].slug}`} className="group block">
+            <div className="image-plate aspect-[21/9]">
+              <img
+                src={works[0].image}
+                alt={works[0].title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="container-lab mt-6">
+              <h2 className="font-display text-display-md italic group-hover:text-accent transition-colors duration-500">
+                {works[0].title}
               </h2>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
+            </div>
+          </Link>
+        </motion.article>
+
+        {/* Second and third - Asymmetric two-column */}
+        <div className="container-lab">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
+            <motion.article
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.15 }}
-              className="space-y-8"
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="md:col-span-7"
             >
-              <div className="border-l-2 border-foreground pl-6">
-                <p className="text-body-lg">Journal covers and scientific illustration</p>
-              </div>
-              <div className="border-l-2 border-muted pl-6">
-                <p className="text-body-lg text-muted-foreground">Cinematic visualization of biological mechanisms</p>
-              </div>
-              <div className="border-l-2 border-muted pl-6">
-                <p className="text-body-lg text-muted-foreground">Conceptual imagery for research communication</p>
-              </div>
-              <div className="border-l-2 border-muted pl-6">
-                <p className="text-body-lg text-muted-foreground">Visual development for scientific storytelling</p>
-              </div>
-              
-              <p className="text-body-lg font-medium pt-4">
-                Every project is a visual interpretation — not a render.
-              </p>
-            </motion.div>
+              <Link to={`/work/${works[1].slug}`} className="group block">
+                <div className="image-plate aspect-[4/3]">
+                  <img
+                    src={works[1].image}
+                    alt={works[1].title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h2 className="mt-6 font-display text-display-sm italic group-hover:text-accent transition-colors duration-500">
+                  {works[1].title}
+                </h2>
+              </Link>
+            </motion.article>
+
+            <motion.article
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="md:col-span-5 md:mt-24"
+            >
+              <Link to={`/work/${works[2].slug}`} className="group block">
+                <div className="image-plate aspect-[3/4]">
+                  <img
+                    src={works[2].image}
+                    alt={works[2].title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h2 className="mt-6 font-display text-display-sm italic group-hover:text-accent transition-colors duration-500">
+                  {works[2].title}
+                </h2>
+              </Link>
+            </motion.article>
           </div>
+        </div>
+
+        {/* View all - subtle */}
+        <div className="container-lab mt-16">
+          <Link
+            to="/work"
+            className="link-subtle text-caption uppercase text-muted-foreground tracking-widest"
+          >
+            All Works
+          </Link>
         </div>
       </section>
 
-      {/* Contact - Direct, Confident */}
-      <section className="section-spacing border-t border-border">
-        <div className="container-editorial">
+      {/* Philosophy - Sparse, Intentional */}
+      <section className="section-massive border-t border-border">
+        <div className="container-offset-right">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl"
+            transition={{ duration: 1 }}
+            className="max-w-3xl ml-auto"
           >
-            <h2 className="text-display-lg font-display mb-8">
-              Let's discuss your project.
-            </h2>
+            <span className="text-caption uppercase text-muted-foreground tracking-widest block mb-8">
+              Philosophy
+            </span>
+            
+            <p className="font-display text-display-md text-foreground mb-8">
+              This is not how science is usually shown.
+            </p>
+            
+            <p className="text-body-md text-muted-foreground max-w-xl">
+              We work at the intersection of biology, graphic-novel language, 
+              and conceptual art. Each image is a visual essay — 
+              an interpretation that balances scientific accuracy with expressive power.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact - Minimal */}
+      <section className="section-dense border-t border-border">
+        <div className="container-lab">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="font-display text-display-sm italic"
+            >
+              Inquiries welcome.
+            </motion.p>
             
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-4 text-xl font-medium"
+              className="link-subtle text-caption uppercase tracking-widest text-muted-foreground"
             >
-              <span className="link-cinematic">Get in touch</span>
-              <ArrowRight className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-2" />
+              Contact
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
     </Layout>
