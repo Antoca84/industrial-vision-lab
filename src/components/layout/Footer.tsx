@@ -1,83 +1,83 @@
 import { Link } from 'react-router-dom';
+import { ArrowUpRight } from 'lucide-react';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  return <footer className="border-t border-border bg-background">
-      <div className="container-editorial py-12 md:py-16">
+
+  return (
+    <footer className="bg-secondary border-t border-border">
+      <div className="container-editorial py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
-          {/* Brand */}
-          <div className="md:col-span-4">
-            <Link to="/" className="font-display text-xl font-medium">
+          {/* Brand Statement */}
+          <div className="md:col-span-6">
+            <Link to="/" className="font-display text-2xl font-medium block mb-6">
               Industrial Magic
             </Link>
-            <p className="mt-4 text-body-sm text-muted-foreground max-w-xs">
-              Scientific cover art and research visualization with cinema-grade quality.
+            <p className="text-body-lg text-muted-foreground max-w-md leading-relaxed">
+              Scientific visualization with cinematic expression. Visual narratives for biological research.
             </p>
           </div>
 
           {/* Navigation */}
-          <div className="md:col-span-2">
-            <h4 className="text-caption uppercase tracking-widest text-muted-foreground mb-4">
+          <div className="md:col-span-3">
+            <h4 className="text-overline uppercase text-muted-foreground mb-6">
               Navigate
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               <li>
-                <Link to="/work" className="text-body-sm text-foreground hover:text-primary transition-colors">
+                <Link to="/work" className="text-body-sm text-foreground hover:text-primary transition-colors inline-flex items-center gap-1 group">
                   Work
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-body-sm text-foreground hover:text-primary transition-colors">
+                <Link to="/services" className="text-body-sm text-foreground hover:text-primary transition-colors inline-flex items-center gap-1 group">
                   Services
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link to="/process" className="text-body-sm text-foreground hover:text-primary transition-colors">
-                  Process
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div className="md:col-span-2">
-            <h4 className="text-caption uppercase tracking-widest text-muted-foreground mb-4">
-              Company
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/about" className="text-body-sm text-foreground hover:text-primary transition-colors">
+                <Link to="/about" className="text-body-sm text-foreground hover:text-primary transition-colors inline-flex items-center gap-1 group">
                   About
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-body-sm text-foreground hover:text-primary transition-colors">
+                <Link to="/contact" className="text-body-sm text-foreground hover:text-primary transition-colors inline-flex items-center gap-1 group">
                   Contact
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
             </ul>
           </div>
 
           {/* Contact */}
-          <div className="md:col-span-4">
-            <h4 className="text-caption uppercase tracking-widest text-muted-foreground mb-4">
+          <div className="md:col-span-3">
+            <h4 className="text-overline uppercase text-muted-foreground mb-6">
               Get in Touch
             </h4>
-            <a href="mailto:hello@industrialmagic.studio" className="text-body-sm text-foreground hover:text-primary transition-colors">hello@industrialmagic.it</a>
+            <a 
+              href="mailto:hello@industrialmagic.it" 
+              className="text-body-sm text-foreground hover:text-primary transition-colors"
+            >
+              hello@industrialmagic.it
+            </a>
+            <p className="mt-6 text-body-sm text-muted-foreground">
+              Based in Italy<br />
+              Working internationally
+            </p>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <p className="text-caption text-muted-foreground">
-              Based in Italy · Working internationally
-            </p>
-            <p className="text-caption text-muted-foreground">
-              © {currentYear} Industrial Magic. Independent studio, not affiliated with similarly named entities.
-            </p>
-          </div>
+          <p className="text-caption text-muted-foreground">
+            © {currentYear} Industrial Magic. Independent studio.
+          </p>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
